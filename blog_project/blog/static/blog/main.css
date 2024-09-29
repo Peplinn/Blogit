@@ -13,7 +13,7 @@ body {
   }
   
   .bg-steel {
-    background-color: #7c1111;
+    background-color: #26506f;
   }
   
   .site-header .navbar-nav .nav-link {
@@ -29,7 +29,7 @@ body {
   }
   
   .content-section {
-    background: #d70f0f;
+    background: #ffffff;
     padding: 10px 20px;
     border: 1px solid #dddddd;
     border-radius: 3px;
@@ -41,7 +41,7 @@ body {
   }
   
   a.article-title:hover {
-    color: #871313c7;
+    color: #428bca;
     text-decoration: none;
   }
   
@@ -81,8 +81,4 @@ body {
   
   .account-heading {
     font-size: 2.5rem;
-  }
-
-  header{
-    margin-top: 5px;
   }
