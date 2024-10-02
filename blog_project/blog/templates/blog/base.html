@@ -27,44 +27,62 @@
 
 <body>
   <!-- <script src="main.js"></script> -->
-  <nav>
+  <!-- <nav>
     <div class="navitems">
       <a id="taleslink" href="{% url 'blog-tales' %}" style="text-decoration:none">Tales</a>
-      <!-- <div class="logo"> -->
       <a id="logolink" href="{% url 'blog-home' %}">
         <img src="{% static 'icons/Que.png' %}" alt="Que Logo" class="quelogo"/>
       </a>
-      <!-- </div> -->
       <a id="aboutlink" href="{% url 'blog-about' %}" style="text-decoration:none">About</a>
     </div>
-  </nav>
+  </nav> -->
+
+  <div class="body-con">
+    <nav class="navbar">
+      <ul class="navbar-center">
+        <li><a href="{% url 'blog-tales' %}">Tales</a></li>
+        <li>
+          <a id="logolink" href="{% url 'blog-home' %}">
+            <img src="{% static 'icons/Que.png' %}" alt="Que Logo" class="quelogo">
+          </a>
+        </li>
+        <li><a href="{% url 'blog-about' %}">About</a></li>
+      </ul>
+    </nav>
+  
+    
+    <!-- <div class="content">
+      <div>
+  
+      </div>
+    </div> -->
+    <main role="main" class="body-container">
+      <div class="row">
+        <div class="inner-column">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </main>
+  
+    <footer id="myfooter">
+      <ul class="footerdiv-center">
+        <li>
+          <a href="https://github.com/Peplinn/Blogit">
+            <img src="{% static 'icons/github-logo.png' %}" alt="Git Logo" class="gitlogo"/>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </div>
 
   
-  <!-- <div class="content">
-    <div>
-
-    </div>
-  </div> -->
-  <main role="main" class="container">
-    <div class="row">
-      <div class="col-md-8">
-        {% if messages %}
-          {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-              {{ message }}
-            </div>
-          {% endfor %}
-        {% endif %}
-        {% block content %}{% endblock %}
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <a href="https://github.com/Peplinn/Blogit">
-      <img src="{% static 'images/GitHubLogo.png' %}" alt="Git Logo" class="gitlogo"/>
-    </a>
-  </footer>
 </body>
 
 </html>

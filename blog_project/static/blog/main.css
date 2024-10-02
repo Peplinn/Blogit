@@ -1,46 +1,147 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: "Outfit", sans-serif;
+    font-family: "Outfit", sans-serif;
 }
 
-nav {
-  height: 5rem;
-  display: flex;
-  justify-content: center;
-  /* align-content: space-between; */
-  /* align-items: center; */
+.body-con {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.navitems{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 2.5rem;
-  font-weight: bold;
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* position: relative; */
 }
 
-#taleslink {
-  color: #857D7D;
-  /* padding-right: 2rem; */
-  margin-right: 2rem;
-
+.navbar-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw; /* The elements take up one-third of the navbar width */
 }
 
-#aboutlink {
-  display: inline-block;
-  color: #857D7D;
-  /* padding-left: 2rem; */
+.navbar-center li {
+    list-style-type: none;
 }
 
-#logolink {
-  /* align-self: center; */
-  /* justify-self: center; */
+.navbar-center a {
+    text-decoration: none;
+    font-size: 2em;
+    color: #857D7D;
+    font-weight: bold;
 }
 
+.navbar-center a:hover {
+    text-decoration: underline;
+}
 
 .quelogo {
-  max-width: 50%;
-  max-height: 50%;
-  /* object-fit: contain; */
+    width: 5em; /* Adjust the width of the logo as needed */
+    height: auto; /* Maintain aspect ratio */
+    /* margin-left: 10%;
+    margin-right: 10%; */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .navbar-center {
+        width: 50%; /* Take up more space on smaller screens */
+    }
+
+    .navbar-center a {
+        font-size: 16px;
+    }
+
+    .quelogo {
+        width: 80px; /* Resize logo for smaller screens */
+    }
+
+    /* .gitlogo {
+        width: 30px;
+    } */
+}
+
+@media (max-width: 480px) {
+    .navbar-center {
+        width: 70%; /* Further expansion on very small screens */
+    }
+
+    .navbar-center a {
+        font-size: 14px;
+    }
+
+    .quelogo {
+        width: 60px; /* Further resize logo */
+    }
+
+    /* .gitlogo {
+        width: 20px;
+    } */
+}
+
+.body-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* height: 70%; */
+}
+
+.body-container .row {
+    display: flex;
+}
+
+
+.body-container .row .inner-column {
+    align-items: center;
+}
+
+
+.body-container .row .inner-column span {
+    display: inline-flex;
+    font-size: 1em;
+}
+
+
+
+
+#myfooter {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* position: relative; */
+}
+
+.footerdiv-center {
+    display: flex;
+    align-items: center;
+    /* width: 40vw; The elements take up one-third of the navbar width */
+}
+
+.footerdiv-center li {
+    list-style-type: none;
+}
+
+.gitlogo {
+    width: 3em; /* Adjust the width of the logo as needed */
+    height: auto;
 }
