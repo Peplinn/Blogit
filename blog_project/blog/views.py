@@ -26,7 +26,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 #     }
 # ]
 
-@login_required
+# @login_required
 def home(request):
     context = {
         #'posts' : Post.objects.all()
@@ -88,6 +88,10 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True
         return False
 
-@login_required
+# @login_required
 def about(request):
     return render(request, 'blog/about.html', {'title':'About'})
+
+# @login_required
+def tales(request):
+    return render(request, 'blog/tales.html', {'title':'Tales'})

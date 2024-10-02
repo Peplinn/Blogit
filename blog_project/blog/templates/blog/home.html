@@ -1,35 +1,80 @@
-{% extends "blog/base.html" %}
-{% block content %}
-    {% for post in posts %}
-        <article class="media content-section">
-            <img class="article-img rounded-circle" src="{{ post.author.profile.image.url }}">
-            <div class="media-body">
-                <div class="article-metadata">
-                    <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-                    <small class="text-muted">{{ post.date_posted|date:"F d, Y, H:i" }}</small>
-                </div>
-                <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-                <p class="article-content">{{ post.content }}</p>
-            </div>
-        </article>
-    {% endfor %}
-    {% if is_paginated %}
-        {% if page_obj.has_previous %}
-            <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-        {% endif %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
-                <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
-            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
-            {% endif %}
-        {% endfor %}
+    
+    <link rel="icon" href="{% static 'icons/Quellus_letter_Q.ico' %}"/>
+    
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet"> -->
 
-        {% if page_obj.has_next %}
-            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-        {% endif %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    {% if title %}
+        <title>Que - {{ title }}</title>
+    {% else %}
+        <title>Que</title>
     {% endif %}
-{% endblock content %}
+</head>
+
+
+<body>
+  <!-- <script src="main.js"></script> -->
+  <header>
+  </header>
+
+  <a href="{% url 'blog-home' %}">
+    <img src="{% static 'icons/Que.png' %}" alt="Logo" class="logo"/>
+  </a>
+  <!-- <div class="content">
+    <div>
+
+    </div>
+  </div> -->
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% for post in posts %}
+            <article class="media content-section">
+                <img class="article-img rounded-circle" src="{{ post.author.profile.image.url }}">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                        <small class="text-muted">{{ post.date_posted|date:"F d, Y, H:i" }}</small>
+                    </div>
+                    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                    <p class="article-content">{{ post.content }}</p>
+                </div>
+            </article>
+        {% endfor %}
+      </div>
+    </div>
+  </main>
+
+  <hr class="rounded">
+
+  <div class="container">
+    <div>
+      <a href="{% url 'blog-tales' %}">Tales</a>
+      <a href="https://github.com/Peplinn/Blogit">
+        <img src="{% static 'images/GitHubLogo.png' %}" alt="Logo" class="logo"/>
+      </a>
+      <a href="{% url 'blog-about' %}">About</a>
+    </div>
+  </div>
+  <!-- <footer>
+    <a href="https://github.com/Peplinn/Blogit">
+      <img src="{% static 'images/GitHubLogo.png' %}" alt="Logo" class="logo"/>
+    </a>
+  </footer> -->
+</body>
+
+</html>
+
+    
+
+    
