@@ -47,7 +47,8 @@ body {
 }
 
 .navbar-center a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #565151;
 }
 
 .quelogo {
@@ -87,6 +88,11 @@ body {
 
 .body-container .row .inner-column #quetransc {
     align-items: center;
+}
+
+.body-container .row .inner-column #quedefin {
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 
