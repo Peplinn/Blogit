@@ -24,7 +24,7 @@ body {
     align-items: center;
     height: 120px;
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
     /* position: relative; */
 }
 
@@ -57,42 +57,6 @@ body {
     margin-right: 10%; */
 }
 
-/* Responsive styling for smaller screens */
-@media (max-width: 768px) {
-    .navbar-center {
-        width: 50%; /* Take up more space on smaller screens */
-    }
-
-    .navbar-center a {
-        font-size: 16px;
-    }
-
-    .quelogo {
-        width: 80px; /* Resize logo for smaller screens */
-    }
-
-    /* .gitlogo {
-        width: 30px;
-    } */
-}
-
-@media (max-width: 480px) {
-    .navbar-center {
-        width: 70%; /* Further expansion on very small screens */
-    }
-
-    .navbar-center a {
-        font-size: 14px;
-    }
-
-    .quelogo {
-        width: 60px; /* Further resize logo */
-    }
-
-    /* .gitlogo {
-        width: 20px;
-    } */
-}
 
 .body-container {
     flex-grow: 1;
@@ -108,16 +72,42 @@ body {
 
 
 .body-container .row .inner-column {
+    /* display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center; */
+
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;     /* Centers items vertically */
+    flex-direction: column;  /* Stacks items vertically (one per line) */
+    text-align: center;
+    font-weight: 400;
+}
+
+.body-container .row .inner-column #quetransc {
     align-items: center;
 }
 
 
 .body-container .row .inner-column span {
     display: inline-flex;
-    font-size: 1em;
+    font-size: 1.7em;
+    color: #857D7D;
+    font-weight: 300;
+
 }
 
+.body-container .row .inner-column span .middot {
+    display: inline;
+    font-size: 2em;
+    color: #D9D9D9;
+}
 
+.body-container .row .inner-column span .transcription {
+    font-size: 1em;
+    font-weight: 200;
+}
 
 
 #myfooter {
@@ -127,7 +117,7 @@ body {
     align-items: center;
     height: 120px;
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
     /* position: relative; */
 }
 
@@ -141,7 +131,64 @@ body {
     list-style-type: none;
 }
 
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .navbar-center {
+        width: 50%; /* Take up more space on smaller screens */
+    }
+
+    .navbar-center a {
+        font-size: 16px;
+    }
+
+    .quelogo {
+        width: 80px; /* Resize logo for smaller screens */
+    }
+
+    .body-container .row .inner-column span {
+        font-size: 16px;
+    }
+
+    .body-container .row .inner-column span .middot {
+        font-size: 1.5em;
+    }
+
+    #myfooter .gitlogo {
+        width: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-center {
+        width: 70%; /* Further expansion on very small screens */
+    }
+
+    .navbar-center a {
+        font-size: 14px;
+    }
+
+    .quelogo {
+        width: 60px; /* Further resize logo */
+    }
+
+    .body-container .row .inner-column span {
+        display: inline-flex;
+        font-size: 14px;
+    }
+
+    .body-container .row .inner-column span .middot {
+        font-size: 1em;
+    }
+
+    #myfooter .gitlogo {
+        width: 20px;
+    }
+}
+
+
 .gitlogo {
     width: 3em; /* Adjust the width of the logo as needed */
     height: auto;
 }
+
+
