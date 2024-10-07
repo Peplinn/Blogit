@@ -24,15 +24,14 @@ body {
     align-items: center;
     height: 120px;
     background-color: #fff;
-    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
-    /* position: relative; */
+
 }
 
 .navbar-center {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40vw; /* The elements take up one-third of the navbar width */
+    width: 500px; /* The elements take up one-third of the navbar width */
 }
 
 .navbar-center li {
@@ -43,7 +42,7 @@ body {
     text-decoration: none;
     font-size: 2em;
     color: #857D7D;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .navbar-center a:hover {
@@ -54,9 +53,11 @@ body {
 .quelogo {
     width: 5em; /* Adjust the width of the logo as needed */
     height: auto; /* Maintain aspect ratio */
-    /* margin-left: 10%;
-    margin-right: 10%; */
 }
+
+
+
+
 
 
 .body-container {
@@ -73,10 +74,6 @@ body {
 
 
 .body-container .row .inner-column {
-    /* display: inline-flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center; */
 
     display: flex;
     justify-content: center; /* Centers items horizontally */
@@ -86,14 +83,65 @@ body {
     font-weight: 400;
 }
 
+
+.body-container .row .inner-column .content {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+    width: 450px;
+}
+
+.content h1 {
+    font-weight: 600;
+}
+
+.content .number {
+    margin-right: 50px;
+}
+
+.content .name-desc {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /* flex-wrap: wrap; */
+}
+
+.numname {
+    display: flex;
+    flex-direction: row;
+}
+
+.numname #tale-number {
+    align-self: flex-start;
+}
+
+
+.abstract {
+    font-size: 18px;
+    color: #000;
+}
+
+.divider {
+    width: 100%;             /* Divider will take 50% of the container's width */
+    border: 1px solid #d9d9d9; /* Thickness and color of the divider */
+}
+
+
+
+
 .body-container .row .inner-column #quetransc {
     align-items: center;
 }
 
 .body-container .row .inner-column #quedefin {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
     padding-left: 2em;
     padding-right: 2em;
 }
+
 
 
 .body-container .row .inner-column span {
@@ -103,6 +151,13 @@ body {
     font-weight: 300;
 
 }
+
+.body-container .row .inner-column #quedefin #rathercool {
+    font-size: 1em;
+    color: #857D7D;
+    font-weight: 300;
+}
+
 
 .body-container .row .inner-column span .middot {
     display: inline;
@@ -137,10 +192,15 @@ body {
     list-style-type: none;
 }
 
+.divider {
+    width: 100%;             /* Divider will take 50% of the container's width */
+    border: 1px solid #d9d9d9; /* Thickness and color of the divider */
+}
+
 /* Responsive styling for smaller screens */
 @media (max-width: 768px) {
     .navbar-center {
-        width: 50%; /* Take up more space on smaller screens */
+        width: 300px; /* Take up more space on smaller screens */
     }
 
     .navbar-center a {
@@ -166,7 +226,7 @@ body {
 
 @media (max-width: 480px) {
     .navbar-center {
-        width: 70%; /* Further expansion on very small screens */
+        width: 200px; /* Further expansion on very small screens */
     }
 
     .navbar-center a {

@@ -1,80 +1,44 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
     <link rel="icon" href="{% static 'icons/Quellus_letter_Q.ico' %}"/>
-    
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet"> -->
 
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/home.css' %}">
     {% if title %}
-        <title>Que - {{ title }}</title>
+        <title>Que - {{ tale.title }}</title>
     {% else %}
         <title>Que</title>
     {% endif %}
 </head>
 
-
 <body>
-  <!-- <script src="main.js"></script> -->
-  <header>
-  </header>
-
-  <a href="{% url 'blog-home' %}">
-    <img src="{% static 'icons/Que.png' %}" alt="Logo" class="logo"/>
-  </a>
-  <!-- <div class="content">
-    <div>
-
+    <div class="container">
+        <div class="logo">
+          <img id="quelogo" src="{% static 'icons/Que.png' %}" alt="Logo"/>
+        </div>
+        <div class="content">
+            <div class="number">
+                <h1 id="tale-number">{{ latest_tale.number }}</h1>
+            </div>
+            <div class="name-desc">
+                <h1>{{ latest_tale.title }}</h1>
+                <p class="abstract">{{ latest_tale.abstract }}</p>
+            </div>
+        </div>
+        <hr class="divider">
+        <div class="nav">
+            <a href="{% url 'blog-tales' %}" class="nav-link">Tales</a>
+            <a href="https://github.com/Peplinn/Blogit" class="github-link" target="_blank">
+              <!-- <img src="{% static 'images/GitHubLogo.png' %}" alt="Logo" class="logo"/> -->
+              <img src="{% static 'icons/github-logo.png' %}" alt="Git Logo" class="gitlogo"/>
+            </a>
+            <a href="{% url 'blog-about' %}" class="nav-link">About</a>
+        </div>
     </div>
-  </div> -->
-  <main role="main" class="container">
-    <div class="row">
-      <div class="col-md-8">
-        {% for post in posts %}
-            <article class="media content-section">
-                <img class="article-img rounded-circle" src="{{ post.author.profile.image.url }}">
-                <div class="media-body">
-                    <div class="article-metadata">
-                        <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-                        <small class="text-muted">{{ post.date_posted|date:"F d, Y, H:i" }}</small>
-                    </div>
-                    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-                    <p class="article-content">{{ post.content }}</p>
-                </div>
-            </article>
-        {% endfor %}
-      </div>
-    </div>
-  </main>
-
-  <hr class="rounded">
-
-  <div class="container">
-    <div>
-      <a href="{% url 'blog-tales' %}">Tales</a>
-      <a href="https://github.com/Peplinn/Blogit">
-        <img src="{% static 'images/GitHubLogo.png' %}" alt="Logo" class="logo"/>
-      </a>
-      <a href="{% url 'blog-about' %}">About</a>
-    </div>
-  </div>
-  <!-- <footer>
-    <a href="https://github.com/Peplinn/Blogit">
-      <img src="{% static 'images/GitHubLogo.png' %}" alt="Logo" class="logo"/>
-    </a>
-  </footer> -->
 </body>
-
 </html>
-
-    
-
-    
