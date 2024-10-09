@@ -23,10 +23,14 @@
         </div>
         <div class="content">
             <div class="number">
-                <h1 id="tale-number">{{ latest_tale.number }}</h1>
+                <a href="{% url 'tale-detail' latest_tale.number %}">
+                    <h1 id="tale-number">{{ latest_tale.number }}</h1>
+                </a>
             </div>
             <div class="name-desc">
-                <h1>{{ latest_tale.title }}</h1>
+                <a href="{% url 'tale-detail' latest_tale.number %}">
+                    <h1>{{ latest_tale.title }}</h1>
+                </a>
                 <p class="abstract">{{ latest_tale.abstract }}</p>
             </div>
         </div>

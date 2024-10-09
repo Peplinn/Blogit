@@ -94,17 +94,27 @@ body {
 
 .content {
     display: flex;
+    align-items: flex-start;
     flex-direction: row;
     margin: 20px 0;
     width: 450px;
 }
 
+.content a {
+    text-decoration: none;
+    color: #000;
+}
+
 .content h1 {
     font-weight: 600;
+    margin: 0;
 }
 
 .content .number {
     margin-right: 50px;
+    width: 43px;
+    text-align: left;
+    height: auto;
 }
 
 .content .name-desc {
@@ -112,6 +122,26 @@ body {
     flex-direction: column;
     text-align: left;
     /* flex-wrap: wrap; */
+}
+
+/* For the Tale Detail View */
+
+.details h1 {
+    font-weight: 600;
+    margin: 0;
+}
+
+.details .tale-content {
+    display: flex;
+    justify-content: center;
+}
+
+.details .name-desc .abstract {
+    font-style: italic;
+}
+
+.details .name-desc .date_posted {
+    color: #857D7D;
 }
 
 .numname {
@@ -129,11 +159,46 @@ body {
     color: #000;
 }
 
+/* End of Tale Detail View */
+
 .divider {
     width: 100%;             /* Divider will take 50% of the container's width */
     border: 1px solid #d9d9d9; /* Thickness and color of the divider */
 }
 
+.pagination {
+    font-size: 0.5em;
+}
+
+.pagination .step-links {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    height: 7px;
+}
+
+.pagination .step-links .current {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #857D7D;
+    font-size: 2rem;
+}
+
+.pagination .step-links #next {
+    margin-left: 1em;
+}
+
+.pagination .step-links #previous {
+    margin-right: 1em;
+}
+
+.pagination a:hover {
+    color: #565151;
+}
 
 /* End of Tales List */
 
@@ -243,7 +308,25 @@ body {
     .content .name-desc p {
         font-size: 15px;
     }
+
+    /* This is the the detail view elements */
+
+    .details {
+        width: 350px;
+    }
+    .details h1 {
+        font-size: 25px;
+    }
     
+    .details p {
+        font-size: 15px;
+    }
+    
+    /* End of detail view elements */
+
+    .pagination a {
+        font-size: 1.5rem;
+    }
 
 
     .divider {
@@ -277,10 +360,70 @@ body {
         width: 60px; /* Further resize logo */
     }
 
+    .body-container .row {
+        /* display: flex; */
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+
     .body-container .row .inner-column span {
         display: inline-flex;
         font-size: 14px;
     }
+
+
+
+
+    .content {
+        width: 260px;
+    }
+    .content h1 {
+        font-size: 18px;
+    }
+    
+    .content .number {
+        margin-right: 20px;
+    }
+    
+    .content .name-desc {
+        align-self: flex-end;
+    }
+    
+    .content .name-desc p {
+        font-size: 12px;
+    }
+
+
+    /* This is the the detail view elements */
+
+    .details {
+        width: 260px;
+    }
+    .details h1 {
+        font-size: 18px;
+    }
+    
+    .details p {
+        font-size: 12px;
+    }
+    
+    /* End of detail view elements */
+
+    .pagination a {
+        font-size: 1.25rem;
+    }
+    
+
+
+    .divider {
+        width: 260px;
+        /* width: 50vw; */
+    }
+
+
+
+
 
     .body-container .row .inner-column span .middot {
         font-size: 1em;

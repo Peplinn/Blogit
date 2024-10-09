@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <!-- <h1>Tale Detail</h1> -->
+
+        <div class="details">
+            <div class="number">
+                <h1 id="tale-number">{{ tale.number }}</h1>
+            </div>
+            <div class="name-desc">
+                <h1>{{ tale.title }}</h1>
+                <p class="abstract">{{ tale.abstract }}</p> 
+                <p class="date_posted">{{ tale.date_posted|timesince }} ago</p>
+            </div>
+            <div class="tale-content">
+                <p class="content">{{ tale.content }}</p>
+            </div>
+        </div>
+
+{% endblock content %}

@@ -5,10 +5,14 @@
     {% for tale in tales %}
         <div class="content">
             <div class="number">
-                <h1 id="tale-number">{{ tale.number }}</h1>
+                <a href="{% url 'tale-detail' tale.number %}">
+                    <h1 id="tale-number">{{ tale.number }}</h1>
+                </a>
             </div>
             <div class="name-desc">
-                <h1>{{ tale.title }}</h1>
+                <a href="{% url 'tale-detail' tale.number %}">
+                    <h1>{{ tale.title }}</h1>
+                </a>
                 <p class="abstract">{{ tale.abstract }}</p>
             </div>
         </div>
@@ -16,4 +20,24 @@
             <hr class="divider">
         {% endif %}
     {% endfor %}
+
+    <div class="pagination">
+        <br>
+        <span class="step-links">
+            <!-- Page Obj Refers to the Model in the View's context -->
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo;</a>
+                <a id="next" href="?page={{ page_obj.previous_page_number }}"> &lsaquo;</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}&nbsp;
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a id="previous" href="?page={{ page_obj.next_page_number }}">&rsaquo;</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>
+            {% endif %}
+        </span>
+    </div>
 {% endblock content %}

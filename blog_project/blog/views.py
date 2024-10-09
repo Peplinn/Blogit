@@ -39,17 +39,36 @@ def home(request):
     return render(request, 'blog/home.html', context)
 
 class TaleListView(ListView):
+    # Don't forget to implement pagination
     model = Tale
     template_name = 'blog/tales.html' # Expected format: <app>/<model>_<viewtype>.html
     context_object_name = 'tales'
     ordering = ['-number']
+
+    paginate_by = 3
+    
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Tales'  # Add the page title to the context
+        return context
     # paginate_by = 5
+
+class TaleDetailView(DetailView):
+    model = Tale
+    template_name = 'blog/tale_detail.html' # Expected format: <app>/<model>_<viewtype>.html
+    context_object_name = 'tale'
+
+    def get_object(self):
+        number = self.kwargs.get('number')  # Get the 'number' from the URL
+        return get_object_or_404(Tale, number=number)
 
 # @method_decorator(login_required, name = 'dispatch') #Functional, but we will replace this with a mixin
 # class TaleListView(LoginRequiredMixin, ListView):
 #     model = Tale
 #     template_name = 'blog/home.html' # Expected format: <app>/<model>_<viewtype>.html
-#     context_object_name = 'tales'
+#     context_object_name = 't
+# ales'
 #     ordering = ['-date_posted']
 #     paginate_by = 5
 
@@ -63,8 +82,8 @@ class UserTaleListView(ListView):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Tale.objects.filter(author=user).order_by('-date_posted')
 
-class TaleDetailView(DetailView):
-    model = Tale
+# class TaleDetailView(DetailView):
+#     model = Tale
 
 class TaleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Tale

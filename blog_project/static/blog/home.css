@@ -40,6 +40,11 @@ body {
     width: 450px;
 }
 
+.content a {
+    text-decoration: none;
+    color: #000;
+}
+
 .content h1 {
     font-weight: 600;
 }
