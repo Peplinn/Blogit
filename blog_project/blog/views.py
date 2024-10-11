@@ -3,7 +3,7 @@ from django.forms.models import BaseModelForm
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView # Find the rest
 from .models import Tale
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator

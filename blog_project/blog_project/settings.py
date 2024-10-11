@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
@@ -26,10 +27,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
 
+ENVIRONMENT = os.getenv("ENVIRONMENT")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if ENVIRONMENT == "development" :
+    DEBUG = True
+    ALLOWED_HOSTS = ['*']
+else:
+    DEBUG = False
+    ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -39,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'crispy_forms',
     "crispy_bootstrap5",
+    'admin_honeypot',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -91,6 +99,15 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+LOCAL_POSTGRES = False
+
+if ENVIRONMENT == 'production' or LOCAL_POSTGRES == False:
+    DATABASES['default'] = dj_database_url.parse(os.getenv("DATABASE_URL"), conn_max_age=600, ssl_require=True)
+
+    # Ensure 'OPTIONS' key exists and add SSL mode configuration
+    DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
+
 
 
 # Password validation

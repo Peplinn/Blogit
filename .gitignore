@@ -1,3 +1,5 @@
 venv
 .env
 requirements_reserve.txt
+/blog_project/blogit_dump.sql
+/blog_project/.ssh

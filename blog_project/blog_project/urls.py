@@ -22,6 +22,7 @@ from django.urls import path, include
 from users import views as user_views
 
 urlpatterns = [
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('p3p0n1y/', admin.site.urls),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
