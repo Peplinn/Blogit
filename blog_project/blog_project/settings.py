@@ -103,7 +103,7 @@ DATABASES = {
 LOCAL_POSTGRES = False
 
 if ENVIRONMENT == 'production' or LOCAL_POSTGRES == False:
-    DATABASES['default'] = dj_database_url.parse(postgresql://ratherquedev:VJ9sETw6PE2ljDFw2A8pN3W6ppBug0qo@dpg-cs5g4v56l47c73f4fuhg-a.frankfurt-postgres.render.com/ratherque_xm1g, conn_max_age=600, ssl_require=True)
+    DATABASES['default'] = dj_database_url.parse("postgresql://ratherquedev:VJ9sETw6PE2ljDFw2A8pN3W6ppBug0qo@dpg-cs5g4v56l47c73f4fuhg-a.frankfurt-postgres.render.com/ratherque_xm1g", conn_max_age=600, ssl_require=True)
 
     # DATABASES['default'] = dj_database_url.parse(os.getenv("DATABASE_URL"), conn_max_age=600, ssl_require=True)
 
