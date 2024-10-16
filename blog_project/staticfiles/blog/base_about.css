@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+}
+
+.body-con {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    background-color: #fff;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    /* position: relative; */
+}
+
+.navbar-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px; /* The elements take up one-third of the navbar width */
+}
+
+.navbar-center li {
+    list-style-type: none;
+}
+
+.navbar-center a {
+    text-decoration: none;
+    font-size: 2em;
+    color: #857D7D;
+    font-weight: 600;
+}
+
+.navbar-center a:hover {
+    text-decoration: none;
+    color: #565151;
+}
+
+.quelogo {
+    width: 5em; /* Adjust the width of the logo as needed */
+    height: auto; /* Maintain aspect ratio */
+    /* margin-left: 10%;
+    margin-right: 10%; */
+}
+
+
+.body-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* height: 70%; */
+}
+
+.body-container .row {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+.body-container .row .inner-column {
+    /* display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center; */
+
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;     /* Centers items vertically */
+    flex-direction: column;  /* Stacks items vertically (one per line) */
+    text-align: center;
+    font-weight: 400;
+}
+
+
+
+/* For the Tales List: */
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 20px 0;
+    width: 450px;
+}
+
+.content a {
+    text-decoration: none;
+    color: #000;
+}
+
+.content h1 {
+    font-weight: 600;
+    margin: 0;
+}
+
+.content .number {
+    margin-right: 50px;
+    width: 43px;
+    text-align: left;
+    height: auto;
+}
+
+.content .name-desc {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /* flex-wrap: wrap; */
+}
+
+/* For the Tale Detail View */
+
+.details h1 {
+    font-weight: 600;
+    margin: 0;
+}
+
+.details .tale-content {
+    display: flex;
+    justify-content: center;
+}
+
+.details .name-desc .abstract {
+    font-style: italic;
+}
+
+.details .name-desc .date_posted {
+    color: #857D7D;
+}
+
+.numname {
+    display: flex;
+    flex-direction: row;
+}
+
+.numname #tale-number {
+    align-self: flex-start;
+}
+
+
+.abstract {
+    font-size: 18px;
+    color: #000;
+}
+
+/* End of Tale Detail View */
+
+.divider {
+    width: 100%;             /* Divider will take 50% of the container's width */
+    border: 1px solid #d9d9d9; /* Thickness and color of the divider */
+}
+
+.pagination {
+    font-size: 0.5em;
+}
+
+.pagination .step-links {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    height: 7px;
+}
+
+.pagination .step-links .current {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #857D7D;
+    font-size: 2rem;
+}
+
+.pagination .step-links #next {
+    margin-left: 1em;
+}
+
+.pagination .step-links #previous {
+    margin-right: 1em;
+}
+
+.pagination a:hover {
+    color: #565151;
+}
+
+/* End of Tales List */
+
+
+
+
+.body-container .row .inner-column #quetransc {
+    align-items: center;
+}
+
+.body-container .row .inner-column #quedefin {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+
+
+.body-container .row .inner-column span {
+    display: inline-flex;
+    font-size: 1.7em;
+    color: #857D7D;
+    font-weight: 300;
+
+}
+
+.body-container .row .inner-column #quedefin #rathercool {
+    font-size: 1em;
+    color: #857D7D;
+    font-weight: 300;
+}
+
+
+.body-container .row .inner-column span .middot {
+    display: inline;
+    font-size: 2em;
+    color: #D9D9D9;
+}
+
+.body-container .row .inner-column span .transcription {
+    font-size: 1em;
+    font-weight: 200;
+}
+
+
+#myfooter {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    background-color: #fff;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    /* position: relative; */
+}
+
+.footerdiv-center {
+    display: flex;
+    align-items: center;
+    /* width: 40vw; The elements take up one-third of the navbar width */
+}
+
+.footerdiv-center li {
+    list-style-type: none;
+}
+
+.divider {
+    width: 100%;             /* Divider will take 50% of the container's width */
+    border: 1px solid #d9d9d9; /* Thickness and color of the divider */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .navbar-center {
+        width: 300px; /* Take up more space on smaller screens */
+    }
+
+    .navbar-center a {
+        font-size: 16px;
+    }
+
+    .quelogo {
+        width: 80px; /* Resize logo for smaller screens */
+    }
+
+    .body-container .row .inner-column span {
+        font-size: 16px;
+    }
+
+
+
+
+    .content {
+        width: 350px;
+    }
+    .content h1 {
+        font-size: 25px;
+    }
+    
+    .content .number {
+        margin-right: 25px;
+    }
+    
+    .content .name-desc p {
+        font-size: 15px;
+    }
+
+    /* This is the the detail view elements */
+
+    .details {
+        width: 350px;
+    }
+    .details h1 {
+        font-size: 25px;
+    }
+    
+    .details p {
+        font-size: 15px;
+    }
+    
+    /* End of detail view elements */
+
+    .pagination a {
+        font-size: 1.5rem;
+    }
+
+
+    .divider {
+        width: 350px;
+        /* width: 50vw; */
+    }
+
+
+
+
+
+    .body-container .row .inner-column span .middot {
+        font-size: 1.5em;
+    }
+
+    #myfooter .gitlogo {
+        width: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-center {
+        width: 200px; /* Further expansion on very small screens */
+    }
+
+    .navbar-center a {
+        font-size: 14px;
+    }
+
+    .quelogo {
+        width: 60px; /* Further resize logo */
+    }
+
+    .body-container .row {
+        /* display: flex; */
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+
+    .body-container .row .inner-column span {
+        display: inline-flex;
+        font-size: 14px;
+    }
+
+
+
+
+    .content {
+        width: 260px;
+    }
+    .content h1 {
+        font-size: 18px;
+    }
+    
+    .content .number {
+        margin-right: 20px;
+    }
+    
+    .content .name-desc {
+        align-self: flex-end;
+    }
+    
+    .content .name-desc p {
+        font-size: 12px;
+    }
+
+
+    /* This is the the detail view elements */
+
+    .details {
+        width: 260px;
+    }
+    .details h1 {
+        font-size: 18px;
+    }
+    
+    .details p {
+        font-size: 12px;
+    }
+    
+    /* End of detail view elements */
+
+    .pagination a {
+        font-size: 1.25rem;
+    }
+    
+
+
+    .divider {
+        width: 260px;
+        /* width: 50vw; */
+    }
+
+
+
+
+
+    .body-container .row .inner-column span .middot {
+        font-size: 1em;
+    }
+
+    #myfooter .gitlogo {
+        width: 20px;
+    }
+}
+
+
+.gitlogo {
+    width: 3em; /* Adjust the width of the logo as needed */
+    height: auto;
+}
+
+

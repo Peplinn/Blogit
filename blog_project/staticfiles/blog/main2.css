@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+nav {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  /* align-content: space-between; */
+  /* align-items: center; */
+}
+
+.navitems{
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+#taleslink {
+  color: #857D7D;
+  /* padding-right: 2rem; */
+  margin-right: 2rem;
+  
+}
+
+#aboutlink {
+  display: inline-block;
+  color: #857D7D;
+  /* padding-left: 2rem; */
+}
+
+/* #logolink {
+  /* align-self: center; */
+  /* justify-self: center;
+} */
+
+/* #logolink {
+  /* width: 243px;
+  height: 147px; 
+  display: inline-block; Tight fit around the image
+} */
+
+#logolink img {
+  max-width: auto;
+ /* Prevents inline element spacing issues */
+}
+
+/* .quelogo {
+  max-width: 50%;
+  max-height: 50%;
+  /* object-fit: contain;
+} */
