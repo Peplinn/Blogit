@@ -105,9 +105,10 @@ LOCAL_POSTGRES = False
 if ENVIRONMENT == 'production' or LOCAL_POSTGRES == False:
     DATABASES['default'] = dj_database_url.parse(os.getenv("DATABASE_URL"), conn_max_age=600, ssl_require=True)
 
-    # Ensure 'OPTIONS' key exists and add SSL mode configuration
-    DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
+    # DATABASES['default'] = dj_database_url.parse(os.getenv("DATABASE_URL"), conn_max_age=600, ssl_require=True)
 
+    # # Ensure 'OPTIONS' key exists and add SSL mode configuration 
+    DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
 
 
 # Password validation
