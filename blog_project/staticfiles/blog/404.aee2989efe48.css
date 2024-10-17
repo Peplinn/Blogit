@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.q404-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font: 1rem;
+}
+
+.q404-content h2 {
+    font-weight: 600;
+    font-size: 2em;
+    margin-bottom: 0.5rem;
+}
+
+.q404-content a {
+    text-decoration: none;
+    color: #857D7D;
+    font-weight: 300;
+}
+
+.lost-haiku {
+    text-align: center;
+}
